@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>Zdjęcie przez okno</title>
-  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Losowy Cytat</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .quote-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .quote {
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
 <body>
-<h1>Test</h1>
+  <div class="quote-box">
+    <div class="quote" id="quote"></div>
+  </div>
+
+  <script>
+    const quotes = [
+      "Nie ten jest mądry, kto wiele mówi, lecz ten, kto mówi z sensem.",
+      "Najlepszy czas na działanie jest teraz.",
+      "Życie to nie problem do rozwiązania, tylko rzeczywistość do doświadczenia.",
+      "Nie możesz zatrzymać fal, ale możesz nauczyć się surfować.",
+      "Im więcej potu na treningu, tym mniej krwi w boju.",
+      "Codziennie rób coś, co przybliża Cię do Twojego celu.",
+      "Rób, co możesz, tym co masz, tam gdzie jesteś.",
+      "Najciemniej jest tuż przed świtem.",
+      "Sukces to suma niewielkich wysiłków powtarzanych codziennie.",
+      "Nie czekaj. Czas nigdy nie będzie idealny."
+    ];
+
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").textContent = quotes[randomIndex];
+  </script>
 </body>
 </html>
